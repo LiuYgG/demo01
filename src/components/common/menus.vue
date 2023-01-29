@@ -27,8 +27,10 @@ export default {
 .el-menu{
     border-bottom: none !important;  
     float: right;
+    
 }
 .el-menu-item a{
     text-decoration: none;
+    color: #000 !important;
 }
 </style>
