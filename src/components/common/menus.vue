@@ -24,52 +24,5 @@ export default {
 </script>
 
 <style>
-#header{
-    /* background-color: blue; */
-    width: 100%;
-    height: 100px;
-    /* margin: 0px 100px; */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    border-bottom: 1px solid #ccc;
-}
-.logo, .navs{
-    float: left;
-    position: relative;
-    top: 20px;
-    text-align: center;
-}
-.logo{
-    width: 134px;
-    height: 70px;
-    line-height: 70px;
-    background-color: aqua;
-    margin-left: 200px;
-}
-.navs{
-    width: 900px;
-    height: 70px;
-    background-color: aqua;
-}
-.navs .nav-bar{
-    float: right;
-    list-style: none;
-    background-color: aquamarine;
-    line-height: 70px;
-    position: relative;
-    top: -16px;
-}
-.navs .nav-bar .nav-bar-items{
-    /* color: #fff; */
-    float: left;
-    width: 80px;
-    margin: 0px 25px;
-    background-color: blanchedalmond;
-}
-.navs .nav-bar .nav-bar-items a{
-    color: #ccc;
-    text-decoration: none;
-}
+
 </style>
