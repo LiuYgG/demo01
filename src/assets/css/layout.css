@@ -1,4 +1,10 @@
-html, body, #app, .el-container{
+*, html, body, #app{
     padding: 0px !important;
     margin: 0px !important;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    /* transition: 0.3s; */
 }

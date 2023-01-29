@@ -1,15 +1,13 @@
 <template>
   <div>
-    <div id="header">
-        <div class="menus">
-            <div class="logo"><img src="@/assets/logo.png"></div>
-            <div class="navs">
-                <ul class="nav-bar">
-                    <li class="nav-bar-items" v-for="items in names" :key="items"><a href="javascript:void(0);">{{items}}</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <header>
+        <nav>
+            <img src="@/assets/logo.png" alt="" class="logo">
+            <ul class="navs">
+                <li v-for="item in names" :key="item"><a href="javascript:void(0);">{{item}}</a></li>
+            </ul>
+        </nav>
+    </header>
   </div>
 </template>
 
@@ -24,5 +22,30 @@ export default {
 </script>
 
 <style>
-
+header{
+    border-bottom: 1px solid rgb(216, 13, 13);
+    height: 80px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "system-ui",-apple-system, 'Helvetica',Arial, sans-serif;
+    background: #f8f8fd;
+    height: 80px;
+}
+.navs{
+    /* 黑点消失 */
+    list-style: none;
+    display: flex;
+}
+.navs li{
+    float: left;
+    width: 150px;
+    /* letter-spacing: 3px; */
+    margin:0px 32px;
+}
+.navs li a{
+    color: #ddd;
+}
 </style>
