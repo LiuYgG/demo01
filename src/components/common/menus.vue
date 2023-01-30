@@ -23,7 +23,7 @@ export default {
 
 <style>
 header{
-    border-bottom: 1px solid rgb(216, 13, 13);
+    border-bottom: 1px solid #ddd;
     height: 80px;
 }
 nav{
@@ -31,7 +31,7 @@ nav{
     justify-content: space-around;
     align-items: center;
     font-family: "system-ui",-apple-system, 'Helvetica',Arial, sans-serif;
-    background: #f8f8fd;
+    background: #fff;
     height: 80px;
 }
 .navs{
@@ -41,11 +41,25 @@ nav{
 }
 .navs li{
     float: left;
-    width: 150px;
+    /* width: 150px; */
     /* letter-spacing: 3px; */
-    margin:0px 32px;
+    margin:0px 32px !important;
+    height: 80px;
+    line-height: 80px;
+    display: inline-block;
+    cursor: pointer;
+}
+.navs li:hover{
+    color: #4788ec;
+    height: 80px;
+    border-bottom: 1px solid #4788ec;
+}
+.navs li:hover a{
+    color: #4788ec;
+    height: 80px;
+    /* border-bottom: 1px solid #4788ec; */
 }
 .navs li a{
-    color: #ddd;
+    color: #333;
 }
 </style>
