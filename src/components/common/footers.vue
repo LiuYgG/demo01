@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-footer>Footer</el-footer>
+    <footer>123</footer>
   </div>
 </template>
 

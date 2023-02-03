@@ -5,26 +5,33 @@
     <menus></menus>
     <!-- 内容区域 -->
     <main>
-      <el-carousel :interval="5000" arrow="never" height="500px">
+      <el-carousel :interval="5000" arrow="never" height="550px">
         <el-carousel-item v-for="item in imagesbox" :key="item.id">
           <img v-bind:src="item.idView" class="image">
         </el-carousel-item>
       </el-carousel>
+
+      <div class="main_content">
+
+      </div>
     </main>
+
+    <footers>111</footers>
   </div>
 </template>
 
 <script>
 import menus from '../common/menus.vue'
+import footers from '../common/footers.vue'
 
 export default {
-  components: { menus },
+  components: { menus, footers },
   data(){
     return{
       imagesbox:[
-        {id:0, idView:require('https://ncz-upload.oss-cn-shanghai.aliyuncs.com/2021/12/30/3bc00c8852924b19baf6aefc5a619467.png')},
-        {id:1, idView:require('https://ncz-upload.oss-cn-shanghai.aliyuncs.com/2021/12/30/713065f92d024cd9825d5b4b48a34fa6.png')},
-        {id:2, idView:require('https://ncz-upload.oss-cn-shanghai.aliyuncs.com/2021/12/30/6fd25cdfb3514b08936efb92252949f0.png')}
+        {id:0, idView:require('@/assets/images/1.png')},
+        {id:1, idView:require('@/assets/images/2.png')},
+        {id:2, idView:require('@/assets/images/3.png')}
       ],
     }
   }
@@ -39,5 +46,12 @@ export default {
 
 .el-carousel__item:nth-child(2n+1) {
   background-color: #d3dce6;
+}
+
+.main_content{
+  width: 70%;
+  height: 400px;
+  background: red;
+  margin: 0px auto !important;
 }
 </style>

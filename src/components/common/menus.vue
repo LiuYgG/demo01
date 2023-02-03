@@ -25,6 +25,11 @@ export default {
 header{
     border-bottom: 1px solid #ddd;
     height: 80px;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    position: fixed;
 }
 nav{
     display: flex;
