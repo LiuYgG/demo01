@@ -4,7 +4,7 @@
         <nav>
             <img src="@/assets/logo.png" alt="" class="logo">
             <ul class="navs">
-                <li v-for="item in names" :key="item"><a href="javascript:void(0);">{{item}}</a></li>
+                <a :href="item.url" v-for="item in subjects" :key="item.id"><li>{{item.names}}</li></a>
             </ul>
         </nav>
     </header>
@@ -15,7 +15,13 @@
 export default {
     data() {
         return {
-            names: ['首页', '我的动态', '关于我们', '共创合作', '招才纳士']
+            subjects: [
+                {id: 0, names:'首页', url:'/'},
+                {id: 1, names:'全部门店', url:'/store'},
+                {id: 2, names:'我的动态', url:'/renews'},
+                {id: 3, names:'关于我们', url:'/about'},
+                {id: 4, names:'加盟合作', url:'/join'},
+            ]
         }
     }
 }
@@ -26,6 +32,7 @@ header{
     border-bottom: 1px solid #ddd;
     height: 80px;
     width: 100%;
+    min-width: 1200px;
     z-index: 10;
     top: 0;
     right: 0;
@@ -45,7 +52,7 @@ nav{
     display: flex;
 }
 .navs li{
-    float: left;
+    float: none;
     /* width: 150px; */
     /* letter-spacing: 3px; */
     margin:0px 32px !important;
@@ -64,7 +71,7 @@ nav{
     height: 80px;
     /* border-bottom: 1px solid #4788ec; */
 }
-.navs li a{
+.navs a{
     color: #333;
 }
 </style>

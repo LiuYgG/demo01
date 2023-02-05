@@ -11,8 +11,10 @@
         </el-carousel-item>
       </el-carousel>
 
-      <div class="main_content">
-
+      <div class="main">
+        <div class="summary">
+          <img src="@/assets/images/summary.png" alt="" srcset="">
+        </div>
       </div>
     </main>
 
@@ -47,11 +49,18 @@ export default {
 .el-carousel__item:nth-child(2n+1) {
   background-color: #d3dce6;
 }
-
-.main_content{
-  width: 70%;
-  height: 400px;
-  background: red;
+.main{
+  width: 100%;
+  min-width: 1200px;
+}
+.summary{
+  width: 100%;
+  min-width: 1200px;
+}
+.summary img{
+  width: 100%;
+  min-width: 1200px;
+  position: relative;
   margin: 0px auto !important;
 }
 </style>
