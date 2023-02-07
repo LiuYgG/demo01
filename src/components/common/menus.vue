@@ -2,7 +2,10 @@
   <div>
     <header>
         <nav>
-            <img src="@/assets/logo.png" alt="" class="logo">
+            <!-- <img src="@/assets/logo.png" alt="" class="logo"> -->
+            <div class="logo">
+                <h1>全民爱车</h1>
+            </div>
             <ul class="navs">
                 <a :href="item.url" v-for="item in subjects" :key="item.id"><li>{{item.names}}</li></a>
             </ul>
@@ -37,6 +40,10 @@ header{
     top: 0;
     right: 0;
     position: fixed;
+}
+.logo {
+    font-family: 'YouYuan';
+    color: #c51120;
 }
 nav{
     display: flex;

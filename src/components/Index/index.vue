@@ -15,6 +15,21 @@
         <div class="summary">
           <img src="@/assets/images/summary.png" alt="" srcset="">
         </div>
+        <div class="server">
+          <div class="server-title">
+            <h3>告别传统养车 智慧养车</h3>
+          </div>
+          <div class="server-main">
+            <div class="server-main-left">
+              <div v-for="left in items" :key="left.id" class="left_title">{{ left.names }}</div>
+            </div>
+            <div class="server-main-right">
+              <div v-for="content in lists" :key="content.id" class="right_content">
+                <img v-bind:src="content.content" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -35,6 +50,16 @@ export default {
         {id:1, idView:require('@/assets/images/2.png')},
         {id:2, idView:require('@/assets/images/3.png')}
       ],
+      items:[
+        {id:0, names: '施工直播'},
+        {id:1, names: '智能提醒'},
+        {id:2, names: '精确匹配'}
+      ],
+      lists:[
+        {id:0, content:require('@/assets/images/4.png')},
+        {id:1, content:require('@/assets/images/5.png')},
+        {id:2, content:require('@/assets/images/6.png')}
+      ]
     }
   }
 }
@@ -62,5 +87,27 @@ export default {
   min-width: 1200px;
   position: relative;
   margin: 0px auto !important;
+}
+.server{
+  width: 1200px;
+  /* background: #99a9bf; */
+  margin: 0px auto !important;
+  display: block;
+}
+.server-title{
+  width: 200px;
+  padding: 10px !important;
+  border: 1px solid #000;
+}
+.left_title{
+  width: 300px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  border: 1px solid #d3dce6;
+}
+.left_title:hover{
+  background-color: red;
+  cursor: pointer;
 }
 </style>
