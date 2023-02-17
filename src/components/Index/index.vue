@@ -11,25 +11,25 @@
         </el-carousel-item>
       </el-carousel>
 
-      <div class="main">
-        <div class="summary">
-          <img src="@/assets/images/summary.png" alt="" srcset="">
-        </div>
-        <div class="server">
-          <div class="server-title">
-            <h3>告别传统养车 智慧养车</h3>
+      <div id="main_tabs">
+          <div class="tab">
+            <ul>
+              <li 
+                v-for="(tab, index) in tabs" 
+                :key="index.id" 
+                :class="{ active: activeTab === index }" 
+                @click="activeTab = index"
+              >
+                <h5>{{ tab.name }}</h5>
+                <p>{{ tab.desc }}</p>
+              </li>
+            </ul>
           </div>
-          <div class="server-main">
-            <div class="server-main-left">
-              <div v-for="left in items" :key="left.id" class="left_title">{{ left.names }}</div>
-            </div>
-            <div class="server-main-right">
-              <div v-for="content in lists" :key="content.id" class="right_content">
-                <img v-bind:src="content.content" alt="">
-              </div>
+          <div class="tab-content">
+            <div v-for="(tab, index) in tabs" :key="index" :class="{ active: activeTab === index }">
+              <img v-bind:src="tab.content" alt="">
             </div>
           </div>
-        </div>
       </div>
     </main>
 
@@ -50,19 +50,17 @@ export default {
         {id:1, idView:require('@/assets/images/2.png')},
         {id:2, idView:require('@/assets/images/3.png')}
       ],
-      items:[
-        {id:0, names: '施工直播'},
-        {id:1, names: '智能提醒'},
-        {id:2, names: '精确匹配'}
+      activeTab: 0,
+      tabs: [
+        { name: '施工直播', desc: '录像保持30天 如需维权不再难', content:require('@/assets/images/4.png') },
+        { name: '智能提醒', desc: '不用死记硬背去养车', content:require('@/assets/images/5.png') },
+        { name: '精准匹配', desc: '不用担心小病大修', content:require('@/assets/images/6.png') },
       ],
-      lists:[
-        {id:0, content:require('@/assets/images/4.png')},
-        {id:1, content:require('@/assets/images/5.png')},
-        {id:2, content:require('@/assets/images/6.png')}
-      ]
+      
     }
   }
 }
+
 </script>
 
 <style>
@@ -88,26 +86,87 @@ export default {
   position: relative;
   margin: 0px auto !important;
 }
-.server{
-  width: 1200px;
-  /* background: #99a9bf; */
-  margin: 0px auto !important;
-  display: block;
+
+/* tabs */
+#main_tabs{
+  width: 100%;
+  /* position: relative; */
+  /* background-color: #333; */
+  margin: 5px auto !important;
+  /* color: aliceblue; */
 }
-.server-title{
-  width: 200px;
-  padding: 10px !important;
-  border: 1px solid #000;
+.tab{
+  float: left;
+  width: 400px;
+  height: auto;
+  /* border:1px solid red; */
+  margin-left: 350px !important;
+  margin-right: 5px !important;
 }
-.left_title{
-  width: 300px;
-  height: 150px;
-  text-align: center;
-  line-height: 150px;
-  border: 1px solid #d3dce6;
-}
-.left_title:hover{
-  background-color: red;
+.tab{
+  padding: 8px 16px !important;
   cursor: pointer;
 }
+.tab ul {
+  /* display: flex; */
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.tab li{
+  padding: 10px;
+  margin-right: 10px;
+  /* height: 165px; */
+  cursor: pointer;
+  line-height: 165px;
+  text-align: center;
+}
+.tab li:hover{
+  background-color: #3acfe7;
+  transition: backgroun-color 0.2s ease-in-out;
+  border-top-right-radius: 127px;
+  border-bottom-right-radius: 127px;
+  /* display: inline-block; */
+}
+.tab li.active{
+  background-color: #3acfe7;
+  border-bottom: 1px solid #fff;
+  border-top-right-radius: 127px;
+  border-bottom-right-radius: 127px;
+}
+.tab li h5 {
+  float: left;
+  margin-left: 10px !important;
+  font-size: 25px;
+  width: 100px;
+  height: 165px;
+}
+.tab li p{
+  /* background-color: aqua; */
+  /* float: right; */
+  display: flex;
+  height: 165px;
+  position: relative;
+  left: 40px;
+}
+.tab-content{
+  /* border: 1px solid darkblue; */
+  width: 800px;
+  height: 300px;
+  float: left;
+}
+.tab-content div {
+  display: none;
+  /* padding: 20px; */
+  /* border: 1px solid #ccc; */
+}
+
+.tab-content div.active {
+  display: block;
+}
+.tab-content img{
+  width: 100%;
+  height: auto;
+}
+
 </style>
